@@ -19,7 +19,7 @@ export const postVote = (voterName: string, itemIds: number[]) =>
   api.post('/vote', { voterName, itemIds });
 
 export const addItem = (name: string) => 
-  axios.post('http://localhost:8080/api/items', { name });
+  axios.post('http://localhost:8080/api/items', { name : name });
 
 export const deleteItem = (id: number) => 
   axios.delete(`http://localhost:8080/api/items/${id}`);

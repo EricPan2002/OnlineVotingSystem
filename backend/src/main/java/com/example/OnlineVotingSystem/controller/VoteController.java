@@ -34,7 +34,7 @@ public class VoteController {
     public String doVote(@RequestBody Map<String, Object> payload) {
         
         String voterName = (String) payload.get("voterName");
-        List<Integer> itemIds = (List<Integer>) payload.get("itemIds");
+        List<Integer> itemIds = (List<Integer>)payload.get("itemIds");
 
         // call service
         voteService.doVote(voterName, itemIds);
