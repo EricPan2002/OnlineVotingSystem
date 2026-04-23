@@ -30,7 +30,7 @@ Axios
 ###### 後端啟動 (Spring Boot)
 執行方式：
 1.開啟 backend 資料夾。
-2.執行 OnlineVotingSystemApplication.java 中的 main 方法。
+2.執行 OnlineVotingSystemApplication.java 中的 main method。
 
 註：若您的terminal環境變數指向 JRE 而導致 ./mvnw 報錯，請務必使用 IDE 內建的 Run 按鈕啟動。
 
