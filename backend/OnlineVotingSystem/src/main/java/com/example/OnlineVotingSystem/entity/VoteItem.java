@@ -15,6 +15,9 @@ public class VoteItem {
 
     @Column(nullable = false)
     private String name;
+
+    @Transient
+    private int voteCount = 0;
 }
 
 

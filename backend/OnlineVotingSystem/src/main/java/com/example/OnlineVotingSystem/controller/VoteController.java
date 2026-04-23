@@ -22,7 +22,7 @@ public class VoteController {
      */
     @GetMapping("/items")
     public List<VoteItem> getVoteItems() {
-        return voteService.getAllItems();
+        return voteService.getCount();
     }
 
     /**
@@ -40,6 +40,16 @@ public class VoteController {
         voteService.doVote(voterName, itemIds);
 
         return "投票成功！";
+        
+    }
+    @PostMapping("/items")
+    public VoteItem addItem(@RequestBody VoteItem item) {
+        return voteService.saveItem(item);
+    }
+
+    @DeleteMapping("/items/{id}")
+    public void deleteItem(@PathVariable int id) {
+        voteService.deleteItem(id);
     }
 
 }
