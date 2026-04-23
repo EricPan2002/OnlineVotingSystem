@@ -6,7 +6,7 @@ import { addItem, deleteItem } from './api/voteApi';
 const items = ref<(VoteItem & { voteCount?: number })[]>([]);
 const voterName = ref('');
 const selectedIds = ref<number[]>([]);
-const newItemName = ref(''); // 新項目的輸入框
+const newItemName = ref(''); // new input box
 
 const fetchItems = async () => {
   try {
@@ -22,7 +22,7 @@ onMounted(fetchItems);
 // vote
 const submitVote = async () => {
   if (!voterName.value || selectedIds.value.length === 0) {
-    alert('請填寫姓名並選擇至少一個項目');
+    alert('請填寫姓名並選擇至少一個項目!');
     return;
   }
   try {
@@ -41,7 +41,7 @@ const handleAdd = async () => {
   try {
     await addItem(newItemName.value);
     newItemName.value = '';
-    fetchItems(); // 重新整理
+    fetchItems(); // refresh
   } catch (error) {
     alert('新增失敗');
   }
@@ -51,7 +51,7 @@ const handleDelete = async (id: number) => {
   if (!confirm('確定要刪除嗎？')) return;
   try {
     await deleteItem(id);
-    fetchItems(); // 重新整理
+    fetchItems(); 
   } catch (error) {
     alert('刪除失敗');
   }
@@ -60,7 +60,7 @@ const handleDelete = async (id: number) => {
 
 <template>
   <div class="vote-app">
-    <h1>玉山銀行投票系統</h1>
+    <h1>線上投票系統</h1>
     
     <div class="form-item">
       <label>您的姓名：</label>

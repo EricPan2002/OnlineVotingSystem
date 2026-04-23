@@ -33,21 +33,3 @@ ResultSet getItems(Connection conn) throws SQLException {
     );
 }
 $$;;
-
-
-
--- voting procedure
--- CREATE PROCEDURE voting_procedure(IN p_voter VARCHAR(50), IN p_item_id INT)
--- BEGIN
---     INSERT INTO VOTE_RECORD(VOTER_NAME, ITEM_ID)
---     VALUES (p_voter, p_item_id);
--- END ;
-
--- -- query votes
--- CREATE PROCEDURE query_votes()
--- BEGIN
---     SELECT i.ID, i.NAME, COUNT(r.ITEM_ID) AS TOTAL_VOTES
---     FROM VOTE_ITEM i
---     LEFT JOIN VOTE_RECORD r ON i.ID = r.ITEM_ID
---     GROUP BY i.ID, i.NAME;
--- END ;
